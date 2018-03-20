@@ -1,0 +1,483 @@
+/*全局样式定义在最前面*/
+*{margin: 0;padding: 0}
+body{
+	font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+/*一般来讲页面布局不会用到li标签前面的点*/
+/*去掉所有的li标签前面的序号或者点*/
+li{
+	list-style-type: none;
+}
+/*顶端导航部分样式===开始*/
+.top-menu{
+	width: 100%;
+	min-width: 1228px;  /*定义最小宽度*/
+	/*max-width: 6000px;定义最大宽度*/
+	height: 40px;
+	background-color: #333;
+}
+.top-menu .menu{
+	width: 1228px;
+	height: 40px;
+	/*在水平方向居中：左右外边距是auto，上下外边距没影响*/
+	margin: 0 auto;
+}
+/*后代选择器*/
+.top-menu .menu .left{
+	float:left; /*左浮动*/
+	width:500px;
+	/*定义行高，让文字垂直居中*/
+	line-height: 40px;
+}
+/*让li标签的内容显示在一行上面*/
+.top-menu .menu .left li{
+	float: left;
+}
+/*左右的竖线：交叉选择器*/
+.top-menu .menu li.line{
+	padding-left:10px; /*定义左内边距*/
+	padding-right:10px; /*定义右内边距*/
+	color: #555;
+}
+.top-menu .menu .right{
+	float: right; /*右浮动*/
+	width:500px;
+	line-height: 40px;
+}
+.top-menu .menu .right li{
+	float: right;
+}
+/*后代选择器+群组选择器+伪类选择器*/
+.top-menu .menu a{
+	text-decoration: none; /*去掉下划线*/
+}
+.top-menu .menu a:link, .top-menu .menu a:visited{
+	font-size: 12px;
+	color: #b0b0b0;
+}
+.top-menu .menu a:hover, .top-menu .menu a:active{
+	color: #fff;
+}
+/*顶端导航部分样式===结束*/
+
+/*大导航样式*/
+.big-menu{
+	position: relative;
+	width: 1228px;
+	height: 100px;
+	margin: 0 auto;
+	/*border:1px solid #f2d;*/
+}
+/*logo部分样式定义*/
+.big-menu .logo{
+	position: absolute;  /*绝对定位：父级需要定位属性*/
+	top:22px;
+	width: 55px;
+	height: 55px;
+	background-color: #ff6700;
+	text-align: center;  /*水平方向居中*/
+}
+
+.big-menu .logo img{
+	margin-top: 3px;
+}
+/*使用交叉选择器防止影响其他图片效果*/
+.big-menu img.ad{
+	position: absolute;
+	top:17px;
+	left:72px;
+}
+.celar{clear: both;}
+/*定义导航样式*/
+/*使用的是子代选择器*/
+.big-menu>ul{
+	position: absolute;
+	left:245px; 
+	top: 0;
+	height: 100px;
+	line-height: 100px;
+}
+
+.big-menu>ul>li{
+	float: left;
+	padding-right: 20px;
+}
+/*定义超链接的样式*/
+.big-menu>ul>li a:link, .big-menu>ul>li a:visited{
+	color: #333;
+	font-size: 16px;
+	text-decoration: none; /*去掉下划线*/
+}
+.big-menu>ul>li a:hover, .big-menu>ul>li a:active{
+	color: #ff6700;
+}
+/*定义搜索部分的样式*/
+.big-menu .keywords{
+	position: absolute;
+	left: 933px;
+	top: 25px;
+	height: 48px;
+	width: 233px;
+	border: 1px solid #eee; /*定义边框线*/
+	outline: none;/*去掉外边线*/
+	padding-left: 10px;
+	font-size: 16px;
+}
+.big-menu .searchbtn{
+	position: absolute;
+	left: 1176px;
+	top: 25px;
+	width: 50px;
+	height: 48px;
+	background-color: #fff;
+	border: 1px solid #eee; 
+	text-align: center;
+	line-height: 48px;
+	cursor: pointer;/*定义鼠标形状为小手*/
+}
+
+.big-menu .searchbtn:hover{
+	background-color: #ff6700;
+	color: #fff;
+}
+/*大导航样式*/
+
+/*第三块*/
+.banner3{
+	width: 1228px;
+	height: 462px;
+	margin: 0 auto;
+	background-image: url(../image/libg.jpg);
+	background-position: center;
+	position: relative;
+}
+.banner3 .left{
+	width: 236px;
+	height: 422px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.banner3 .left>li{
+	padding-left: 30px;
+	height: 42px;
+	line-height: 42px;
+	width: 206px;
+}
+
+/*鼠标移入改变li标签的背景颜色*/
+.banner3 .left>li:hover{
+	background-color: #ff6700;
+}
+/*鼠标移入显示他的子元素*/
+.banner3 .left>li:hover ul.show{
+	display:block;
+}
+/*定义a的颜色*/
+.banner3 .left li a{
+	text-decoration: none;
+	color: #fff;
+}
+/*鼠标移入显示的内容*/
+.banner3 .left li .show{
+	position: absolute;
+	top: 0;
+	left: 236px;
+	display: none;
+	width: 990px;
+	height: 460px;
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+
+.banner3 .left>li .show li{
+	float: left;
+	width: 330px;
+}
+
+
+/*第四块*/
+.banner4{
+	width: 1228px;
+	height: 170px;
+	margin: 15px auto 35px;
+	/*border:1px solid #f00;*/
+}
+.banner4 li{
+	height: 170px;
+	margin-right: 14px;
+	width: 316px;
+	overflow: hidden;
+	float: left;
+}
+.banner4 li img{
+	height: 170px;
+}
+.banner4 li.first{
+	width: 236px;
+}
+.banner4 li.right{
+	margin-right: 0;
+	margin-left: 2px;
+}
+
+.xmsg{
+	color: #333;
+	font-size: 22px;
+	font-weight: 200;
+	line-height: 58px;
+	width: 1228px;
+	margin: 0 auto;
+}
+
+.banner5{
+	width: 1228px;
+	margin: 0 auto;
+	height: 342px;
+	overflow: hidden;  /*超出部分隐藏*/
+}
+
+.banner5 li{
+	float: left;
+	border-top:1px solid #e53935;
+	background-color: #f1eded;
+	height: 341px;
+	width: 234px;
+	margin-left: 0;
+	text-align: center;
+}
+.banner5 li.li2{
+	border-top-color: #ffac13;
+	margin-left: 14px;
+	background-color: #eeeeee;
+}
+
+.banner5 li.c3{
+	border-top-color: #83c44e;
+}
+.banner5 li.c4{
+	border-top-color: #2196f3;
+}
+.banner5 li.c5{
+	border-top-color:#e53935 ;
+}
+.banner5 li.li1 h3{
+	color: #ef3a3b;
+	font-size: 21px;
+	font-weight: 200;
+	margin-top: 60px;
+	width: 234px;
+	text-align: center;
+}
+.banner5 li.li1 img{
+	margin-top: 33px;
+}
+
+.banner5 li.li1 .desc{
+	color: #666;
+	margin-top: 30px;
+}
+.banner5 li.li1 .date{
+	width: 170px;
+	height: 50px;
+	margin: 30px auto;
+}
+.banner5 li.li1 .date li{
+	float: left;
+	width: 46px;
+	height: 46px;
+	background-color: #605751;
+	font-size: 24px;
+	color: #fff;
+	border: 0;
+	text-align: center;
+	line-height: 46px;
+} 
+
+.banner5 li.li1 .date li.mh{
+	background-color:transparent;
+	width: 15px;
+	color: #605751;
+}
+
+.myp{
+	cursor:pointer;/*定义鼠标形状的*/
+	position: relative; /*为了子代使用绝对定位属性*/
+	text-align: center;/*内容水平方向居中*/
+	width: 234px;
+	height: 342px;
+}
+
+.myp img{
+	width: 150px;
+	height: 150px;
+	margin-top:45px;/*上边距*/
+	margin-bottom:35px;
+}
+
+.myp a{
+	display: block; /*把行内标签转块级标签*/
+}
+
+.myp a:link, .myp a:active, .myp a:hover, .myp a:visited{
+	color: #333;
+	text-decoration: none;  /*去掉下划线*/
+	font-size: 14px;
+}
+
+.myp span{
+	color: #757575;
+	font-size: 12px;
+	display: block;
+	margin-bottom: 12px;
+	margin-top: 3px;
+}
+.myp .price1{
+	width: 115px;
+	height: 32px;
+	text-align: right;
+	color: #ff6700;
+	font-size: 14px;
+	float: left;
+}
+.myp .price2{
+	width: 115px;
+	height: 32px;
+	text-align: left;
+	color: #757575;
+	font-size: 14px;
+	float: right;
+	text-decoration: middle;
+}
+
+.myp .comment{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 235px;
+	height: 78px;
+	background-color: #ff6700;
+	z-index:2;  /*定义显示的层，值越大，层级越高，只对有定位属性的元素起作用*/
+}
+
+.myp .comment span{
+	color: #fff;
+	font-size: 12px;
+	display: block;
+	width: 175px;
+	margin: 8px auto;
+	line-height: 20px;
+	text-align: left;
+}
+
+.myp .comment span.writer{
+	color: #ff4500;
+	margin-top: 0px;
+}
+/*鼠标移入显示评论信息*/
+.myp:hover .comment{
+	display: block;
+}
+
+/*广告图片样式*/
+.ad2{
+	width: 1228px;
+	height: 120px;
+	overflow: hidden; /*处理图片时一般放在一个元素里面，设置超出隐藏*/
+	margin: 42px auto; /*水平方向居中*/
+}
+.ad2 img{height: 120px;}
+
+.maindiv{
+	width: 100%;
+	height: auto;
+	min-width: 1228px;
+	background-color: #f5f5f5;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.maindiv .banner6{
+	width: 1228px;
+	height: 35px;
+	margin:0 auto;
+}
+.maindiv .banner6 li:first-child{
+	float: left;
+	text-align: left;
+	line-height: 35px;
+	color: #333;
+	font-size: 22px;
+	font-weight: 200;
+}
+
+.maindiv .banner6 li:last-child{
+	float: right;
+	text-align: right;
+	line-height: 35px;
+}
+.maindiv .banner6 li:last-child a:link, .maindiv .banner6 li:last-child a:visited{
+	color: #424242;
+	text-decoration: none;
+}
+.maindiv .banner6 li:last-child a:hover{
+	color: #ff6700;
+	transition: color .3s;
+}
+
+.banner7{
+	height: 618px; /*考虑li的内边距3px*/
+	width: 1228px;
+	margin: 0 auto 50px;
+
+}
+/*定义内边距3px的目的是实现鼠标移入时向上动一下*/
+.banner7 li{
+	padding-top: 3px;
+	float: left;
+	padding-bottom: 15px;
+}
+
+.banner7 li:first-child, .banner7 li:first-child img{
+	width: 234px;
+	height: 615px;
+}
+/*把上面的3px放到下面*/
+.banner7 li:hover{
+	padding-top: 0;
+	padding-bottom: 18px;
+	transition: padding-bottom 0.5s;
+}
+/*鼠标移入后给图片加阴影效果*/
+.banner7 li:first-child:hover img{
+	box-shadow: 0 1px 30px 0 #ccc;
+	transition: box-shadow .5s;
+}
+
+.banner7 li:not(.first){
+	width: 236px;
+	height: 300px;
+	/*background-color: blue;*/
+	margin-left: 12px;
+	/*margin-bottom: 12px;*/
+	overflow: hidden;
+}
+
+.banner7 li:not(.first) div{
+	width: 236px;
+	height: 272px;
+	background-color: #fff;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.banner7 li:not(.first):hover div{
+	box-shadow: 0 1px 30px 0 #ccc;
+	transition: box-shadow .5s;
+}
+
+.banner7 li:not(.first) div img{
+	width: 160px;
+	height: 160px;
+}
